@@ -1,0 +1,1067 @@
+点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?点击保存私钥，随便起个名字随便放在哪（无视关于叫你填写密码的提示）；将图中黄底的内容复制，打开Github中Account Setting页面里的SSH Public Key 选项卡，选择 Add another public key ，将刚才复制的公钥复制进去，随便起个名字，提交；
+6. 在开始菜单中找到Putty的文件夹，打开 Pageant ，选择增加密钥，把刚才保存的那个后缀名为 ppk 的私钥导进去；
+7. 在 Dashboard 页面的 Your Repositories 栏目下可以找到自己创建的那个项目，点击进去。能得到该项目的 Git 地址，比如我创建的 Shadowblue 地址就是：
+
+git@github.com:interjc/ShadowBlue.git
+找到你要放置项目的地方，右键选择 Git Clone , Url 处填入刚才那个地址，点击 “OK” ，项目就应该在本地成功建立了。
+
+然后就是使用了：
+
+1. 在本地项目目录中添加或进行改动以后需要先 Commit（你也可以用命令行，不过我这里示范时使用右键菜单中的 Git Commit -> “master” ）,选择需要提交的改动，点击“OK”，这个时候项目的版本就在本地维护起来了；
+2. 选择右键菜单中的 Git Sync .. ，在出现的界面中先选择 Pull，然后 Push，全部顺利的话，就会将本地的版本管理与服务器上的同步了。
+3. 使用的时候稍显蛋疼的是每次开机或退出Pageant以后都要重新打开它并导入密钥以后，Git的验证才能通过，不像TortoiseSVN是自动保存的（可能是我没研究透彻吧）在TortoiseGit -> Setting -> Remote -> origin 下的 Putty 项中通过浏览加载先前保存的 ppk 文件并保存，Sync 的时候勾选 Autoload Putty key 选项，每次就会自动打开pageant载入key了；
+4. 当服务器上的代码有变更以后，本地必须先 Pull 以后才可以 Push ，有效地避免了 SVN 上你刚上传一个东西，就被别人覆盖掉的坑爹情况，麻烦就麻烦一点吧，习惯就好；
+5. 推荐使用 WinMerge 取代 TortoiseGit 自带的 Merge 工具，因为自带那个太蛋疼了。WinMerge 安装以后，在 TortoiseGit -> Settings 中，将 External Programs 下的 Diff Viewer 及 Merge Tool 中的 TortoiseMerge 改为 External ，下面填写 WinMergeU.exe 的路径即可，比如：
+
+D:\Program Files\WinMerge\WinMergeU.exe
+当然你如果觉得自带的 Merge 工具更好那就当我这条没说吧～
+6. Have fun with Git ~
+
+PS：这里不想讨论 SVN 与 Git 孰优孰劣的问题，有此兴趣的朋友请绕道。
+
+原文出处：http://interjc.net/archives/2011/09/05/using-github-on-windows.html
+
+标签：	 Github Git TortoiseGit msysgit WinMerge
+补充话题说明?
+分享到 收藏26举报踩 0 | 顶 0
+按默认排序 | 显示最新评论 | 回页面顶部 共有4个评论 发表评论?
